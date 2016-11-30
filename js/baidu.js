@@ -1,4 +1,10 @@
 $(function(){
+    $("#fullpage").mousedown(function(e){
+        e.preventDefault();
+    })
+    $("#fullpage").mouseover(function(e){
+        e.preventDefault();
+    })
     var ch=$(window).height();
     var num=0;
     var flag=true;
