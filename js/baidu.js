@@ -41,21 +41,6 @@ $(function(){
         }
     })
 
-    //监测浏览器宽度
-    $(window).resize(function(){
-        var ch=$(window).height();
-        var cw=$(window).width();
-        if(cw>1000){
-            $(".menu a").css({
-                animation:"none",
-                opacity:0
-            })
-            $(".menu-option-uline,.menu-option-bline").css({
-                transform:"translate(0,0) rotate(0deg)"
-            })
-        }
-    })
-
     //全屏
     $("#fullpage").mousedown(function(e){
         e.preventDefault();
@@ -119,20 +104,22 @@ $(function(){
     $("#fullpage")[0].addEventListener("webkitTransitionEnd",function(){
         flag=true;
     })
-    console.log(num)
-    //页面内容显示
-    //$("section").each(function(i,obj){
-    //    if(i==0){
-    //        return;
-    //    }
-    //    console.log(i+","+num);
-    //    if(i==num){
-    //        $(obj).find(".sleft-con").css({opacity:1,transform:"translate(0,0)"});
-    //        $(obj).find(".sright-con").css({opacity:1,transform:"translate(0,0)"});
-    //    }else{
-    //        $(obj).find(".sleft-con").css({opacity:0,transform:"translate(-50px,0)"});            $(obj).find(".sleft-con").css({opacity:1,transform:"translate(0,0)"});
-    //        $(obj).find(".sright-con").css({opacity:0,transform:"translate(50px,0)"});
-    //    }
-    //})
+
+    //监测浏览器宽度
+    $(window).resize(function(){
+        var ch=$(window).height();
+        $("#fullpage").css({marginTop:-num*ch,transition:"margin 1s ease"});
+        var cw=$(window).width();
+        if(cw>1000){
+            $(".menu a").css({
+                animation:"none",
+                opacity:0
+            })
+            $(".menu-option-uline,.menu-option-bline").css({
+                transform:"translate(0,0) rotate(0deg)"
+            })
+        }
+    })
+
 
 })
