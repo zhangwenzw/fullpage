@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/baidu.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/less.css">
     <script src="js/touch.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/baidu.js"></script>
 </head>
 <body>
 <header>
-    <nav>
+    <nav class="header max">
         <a href="" class="logo"></a>
         <a href="" class="index">首页</a>
         <a href="" class="index">产品介绍</a>
@@ -35,12 +37,70 @@
         <a href="" class="last">联系我们</a>
         <a href="" class="last oriange">申请试用</a>
     </nav>
+    <nav class="header min">
+        <div href="" class="logo"></div>
+        <div class="menu-option">
+            <div class="menu-option-uline"></div>
+            <div class="menu-option-bline"></div>
+        </div>
+        <div class="menu">
+            <a href="" class="index">首页</a>
+            <a href="" class="index">产品介绍</a>
+            <a href="" class="index">用户版</a>
+            <!--<a href=""class="last" style="display: none">登录</a>-->
+            <a href="" class="last">手机客户端</a>
+            <a href="" class="last">百度司南</a>
+            <a href="" class="last">联系我们</a>
+            <a href="" class="last oriange">申请试用</a>
+        </div>
+    </nav>
 </header>
 <div id="fullpage">
     <section>
-        <div class="flight">
-            <img src="img/launch.png" alt="">
-            <img src="img/flight.png" alt="">
+        <div class="cloud">
+            <div class="cloud-one"></div>
+            <div class="cloud-two"></div>
+            <div class="cloud-three"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-m-6 col-s-hide s-left">
+                    <img src="img/launch.png" alt="">
+                    <img src="img/flight.png" alt="">
+                </div>
+                <div class="col-m-6 col-s-12 s-right">
+                    <div class="login">
+                        <form action="">
+                            <div class="user">
+                                <span></span>
+                                <input type="text" placeholder="用户名"></div>
+                            <p class="error"></p>
+                            <div class="pass">
+                                <span></span>
+                                <input type="password" placeholder="密码"></div>
+                            <p class="error"></p>
+                            <div class="toke">
+                                <input type="text" placeholder="验证码">
+                                <img src="img/cas.baidu.jpg" alt="">
+                                <a href="">换一张</a>
+                            </div>
+                            <p class="error"></p>
+                            <div class="login-sub">
+                                <input type="submit" value="登录">
+                                <div class="other">
+                                    <div class="login-left">
+                                        <span></span>
+                                        <a href="">安全控件常见问题</a>
+                                    </div>
+                                    <div class="login-right">
+                                        <a href="">忘记密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="forward-head">
             <div class="zuan1"></div>
@@ -48,51 +108,27 @@
             <div class="zuan3"></div>
             <div class="ship"></div>
             <div class="ship"></div>
-            <a href="">##</a>
-        </div>
-        <div class="login">
-            <form action="">
-                <div class="user">
-                    <span></span>
-                    <input type="text" placeholder="用户名"></div>
-                <p class="error"></p>
-                <div class="pass">
-                    <span></span>
-                    <input type="password" placeholder="密码"></div>
-                <p class="error"></p>
-                <div class="toke">
-                    <input type="text" placeholder="验证码">
-                    <img src="img/cas.baidu.jpg" alt="">
-                    <a href="">换一张</a>
-                </div>
-                <p class="error"></p>
-                <div class="login-sub">
-                    <input type="submit" value="登录">
-                    <div class="other">
-                        <div class="left">
-                            <span></span>
-                            <a href="">安全控件常见问题</a>
-                        </div>
-                        <div class="right">
-                            <a href="">忘记密码</a>
-                        </div>
-                    </div>
-                </div>
-            </form>
+            <a href="##"></a>
         </div>
     </section>
     <section>
-        <div class="twoleft">
-            <h3></h3>
-            <div class="tltext">
-                <h4>数据收集与处理</h4>
-                <p>15年专业数据收集与语义分析技术积累<br>卓越极致，不断攀登</p>
+        <div class="container">
+            <div class="row s-other">
+                <div class="col-m-6 col-s-12 s-left">
+                    <div class="sleft-con">
+                        <h3></h3>
+                        <div class="tltext">
+                            <h4>数据收集与处理</h4>
+                            <p>15年专业数据收集与语义分析技术积累<br>卓越极致，不断攀登</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-m-6 col-s-hide s-right">
+                    <img src="img/brain.png" alt="" class="sright-con">
+                </div>
             </div>
         </div>
-        <div class="tworight">
-            <img src="img/brain.png" alt="">
-        </div>
-        <div class="twobottom">
+        <div class="forward-head">
             <div class="square"></div>
             <div class="square"></div>
             <div class="square"></div>
@@ -102,6 +138,22 @@
         </div>
     </section>
     <section>
+        <div class="container">
+            <div class="row s-other">
+                <div class="col-m-6 col-s-12 s-left">
+                    <div class="sleft-con">
+                        <h3></h3>
+                        <div class="tltext">
+                            <h4>舆情分析逻辑与架构</h4>
+                            <p>声量诊断、传播分析、情感提炼、受众画像<br>有方法论，更有智慧</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-m-6 col-s-hide s-right">
+                    <img src="img/allside.png" alt="" class="sright-con">
+                </div>
+            </div>
+        </div>
         <div class="threelg">
             <div class="rect"></div>
             <div class="rect"></div>
@@ -109,35 +161,30 @@
             <div class="rect"></div>
             <div class="rect"></div>
         </div>
-        <div class="twoleft">
-            <h3></h3>
-            <div class="tltext">
-                <h4>舆情分析逻辑与架构</h4>
-                <p>声量诊断、传播分析、情感提炼、受众画像<br>有方法论，更有智慧</p>
-            </div>
-        </div>
-        <div class="tworight">
-            <img src="img/allside.png" alt="">
-        </div>
-        <div class="twobottom">
-            <a href="#"></a>
+        <div class="forward-head">
         </div>
     </section>
     <section>
-        <div class="twoleft">
-            <h3></h3>
-            <div class="tltext">
-                <h4>专业数据可视化</h4>
-                <p>非凡的数据洞悉和可视化能力
-                    <br>
-                    精研数据，惊艳所见</p>
+        <div class="container">
+            <div class="row s-other">
+                <div class="col-m-6 col-s-12 s-left">
+                    <div class="sleft-con">
+                        <h3></h3>
+                        <div class="tltext">
+                            <h4>专业数据可视化</h4>
+                            <p>非凡的数据洞悉和可视化能力
+                                <br>
+                                精研数据，惊艳所见</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-m-6 col-s-hide s-right">
+                    <img src="img/stat.png" alt="" class="sright-con">
+                </div>
             </div>
         </div>
-        <div class="tworight">
-            <img src="img/stat.png" alt="">
-        </div>
-        <div class="twobottom">
-            <a href="#"></a>
+        <div class="forward-head">
+            © 2014 Baidu<a href="#">使用百度前必读</a>
         </div>
     </section>
 </div>

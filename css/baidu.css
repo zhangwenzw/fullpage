@@ -1,9 +1,12 @@
 body,html{
-    width:100%;height:100%;margin:0;padding:0;overflow: hidden;
+    width:100%;height:100%;margin:0;padding:0;overflow: hidden;color:#fff;font-family: "Microsoft Yahei"
 }
 a{
     color: #fff;text-decoration: none;font-family: "Microsoft Yahei";
 }
+
+/*头部*/
+/*大屏*/
 header{
     width:100%;height:60px;background:#168bd8;position: fixed;top:0;left:0;z-index:999;
 }
@@ -64,56 +67,89 @@ header a:nth-of-type(5):hover .hidden{
     left:220px;
 }
 
-
 #fullpage{
     width:100%;height:100%;
 }
 section{
     width:100%;height:100%;position: relative;
 }
+
+/*小屏导航*/
+.min{
+    display: none;width:90%;
+}
+.min .menu-option{
+    width:25px;height:12px;position: absolute;top:25px;right:40px;
+}
+.min .menu-option .menu-option-uline,.min .menu-option .menu-option-bline{
+    width:100%;height:3px;border-radius: 1px;background:#fff;position: absolute;right:0;transition: transform .5s ease;
+}
+.min .menu-option .menu-option-uline{
+    top:0;
+}
+.min .menu-option .menu-option-bline{
+    bottom: 0;
+}
+.min .menu{
+    width:100%;position: absolute;top:60px;left:0;display:none;
+}
+.min .menu a{
+    display: block;width:100%;height:50px;text-align: center;line-height: 50px;background:rgba(0,0,0,.8);margin:0;opacity: 0;
+}
+
+
+
+/*第一屏*/
 section:nth-child(1){
     background: url("../img/bg1.jpg") no-repeat center;
 }
-section:nth-child(2){
-    background: url("../img/bg2.jpg") no-repeat center;
+/*cloud*/
+.cloud{
+    width:100%;height:100%;position: absolute;top:0;left:0;
 }
-section:nth-child(3){
-    background: url("../img/bg3.jpg") no-repeat center;
+.cloud .cloud-one,.cloud .cloud-two,.cloud .cloud-three{
+    width:100%;height:400px;background-size: cover;position:absolute;left:0;
 }
-section:nth-child(4){
-    background: url("../img/bg4.jpg") no-repeat center;
+.cloud .cloud-one{
+    background: url("../img/cloud_1.png") repeat;height:1000px;top:0;animation: cloud 100s linear infinite;
 }
-/*第一屏*/
-#fullpage .flight{
+.cloud .cloud-two{
+    background: url("../img/cloud_2.png") repeat;top:-200px;animation: cloud 280s linear infinite;
+}
+.cloud .cloud-three{
+    background: url("../img/cloud_3.png") repeat;bottom:0;animation: cloud 600s linear infinite;
+}
+
+.container{
+    height:100%;
+}
+.container .row{
+    height:100%;
+}
+.container .row .s-left{
+    height:100%;
+}
+.container .row .s-right{
+    height:100%;
+}
+.s-left>img:nth-child(1){
     top: 100px;
-    left: 180px;
-    position: absolute;
-    width: 100%;
-}
-.flight img:nth-child(1){
-    top: 0;
-    left: 0;
+    left: 0px;
     position: absolute;
 }
-.flight img:nth-child(2){
+.s-left>img:nth-child(2){
     top: 10px;
     left: 300px;
     position: absolute;
     transition: all 0.5s ease;
     animation: flight 1s linear infinite alternate;
 }
-@keyframes flight {
-    100% {
-        transform: translateY(-10px);
-    }
-}
+
 #fullpage .forward-head{
+    width: 100%;  height: 126px;  position: absolute;  bottom: 0;  left: 0;
+}
+#fullpage section:nth-child(1) .forward-head{
     background: url("../img/bg2.jpg") repeat scroll 0 0;
-    height: 126px;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
 }
 .forward-head .zuan1{
     position: absolute;
@@ -148,6 +184,7 @@ section:nth-child(4){
     width: 242px;
     transition: all 1s;
 }
+
 /*表单*/
 .login{
     height: 300px;
@@ -155,7 +192,7 @@ section:nth-child(4){
     border-radius: 5px;
     background: #4ebffc;
     position: absolute;
-    right: 183px;
+    right: 0px;
     top:110px;    padding: 0 20px;
     box-sizing: border-box;
 }
@@ -182,14 +219,14 @@ section:nth-child(4){
 }
 .user>span{
     display: inline-block;
-    background: url(../img/icons.png?20140305) no-repeat -124px -12px;
+    background: url(../img/icons.png) no-repeat -124px -12px;
     width: 14px;
     height: 14px;
     margin: 12px 3px 0 10px;
 }
 .pass>span{
     display: inline-block;
-    background: url(../img/icons.png?20140305) no-repeat -140px -12px;
+    background: url(../img/icons.png) no-repeat -140px -12px;
     width: 14px;
     height: 14px;
     margin: 12px 3px 0 10px;
@@ -265,16 +302,16 @@ section:nth-child(4){
     text-decoration: none;
     line-height: 17px;
 }
-.left a{
+.login-left a{
     margin-top: -5px;
 }
-.left{
+.login-left{
     float: left;
 }
-.right{
+.login-right{
     float: right;
 }
-.left>span{
+.login-left>span{
     display: block;
     float: left;
     width: 15px;
@@ -284,27 +321,19 @@ section:nth-child(4){
 }
 
 /*第二屏*/
-#fullpage .twobottom{
-    width: 100%;
-    position: absolute;
-    height: 90px;
-    left: 0;
-    bottom: 0;
+section:nth-child(2){
+    background: url("../img/bg2.jpg") no-repeat center;
 }
-#fullpage .twoleft{
-    color: #fff;
-    font-family: "Microsoft Yahei";
-    position: absolute;
-    top: 150px;
-    left: 250px;
-    width: 500px;
+.s-left>div{
+    width:500px;
+    height:130px;position: absolute;left:0;top:100px;
 }
-#fullpage .tworight{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.twoleft h3{
+.sleft-con,.sright-con{
+    opacity: 0;transform:translate(-50px,0);transition: transform 1s ease,opacity 1s ease;
+}.sright-con{
+     transform:translate(50px,0);
+ }
+#fullpage .s-left h3{
     display: block;
     float: left;
     height: 126px;
@@ -312,13 +341,15 @@ section:nth-child(4){
     margin-top: 50px;
     width: 66px;
     animation: rotate 1.2s infinite 0s;
-    background:url("../img/lingxian.png") no-repeat scroll 0 0
 }
-.twoleft .tltext{
+#fullpage section:nth-child(2) .s-left h3{
+    background:url("../img/lingxian.png") no-repeat scroll 0 0;
+}
+.s-left .tltext{
     margin-left: 86px;
     margin-top: 8px;
 }
-.twoleft .tltext h4{
+.s-left .tltext h4{
     font-size: 34px;
     font-weight: 400;
     letter-spacing: 2px;
@@ -326,7 +357,7 @@ section:nth-child(4){
     margin-bottom: 6px;
     margin-top: 45px;
 }
-.twoleft .tltext p {
+.s-left .tltext p {
     font-size: 19px;
     letter-spacing: 1px;
     line-height: 32px;
@@ -337,10 +368,98 @@ section:nth-child(4){
         transform: rotateY(360deg);
     }
 }
-.tworight img{
-    height: 427px;
+.s-right>img{
     position: absolute;
     right: 100px;
     top: 120px;
+}
+#fullpage section:nth-child(2) .s-right>img{
+    height: 427px;
     width: 444px;
+}
+.forward-head .square{
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+.forward-head .square:nth-child(1){
+    background: #35b568 repeat 0 0;
+    height: 44px;
+    left: 260px;
+    width: 44px;
+}
+.forward-head .square:nth-child(2) {
+    height: 88px;
+    width: 88px;
+    background: #4ac179 repeat  0 0;
+    left: 350px;
+}
+.forward-head .square:nth-child(3) {
+    background: #8ae75a repeat 0 0;
+    height: 44px;
+    left: 438px;
+    width: 44px;
+}
+.forward-head .square:nth-child(4) {
+    background: #8ae75a repeat  0 0;
+    height: 44px;
+    right: 500px;
+    width: 44px;
+}
+.forward-head .square:nth-child(5) {
+    background: #4ac179 repeat  0 0;
+    height: 44px;
+    right: 420px;
+    width: 44px;
+}
+/*第三屏*/
+section:nth-child(3){
+    background: url("../img/bg3.jpg") no-repeat center;
+}
+#fullpage section:nth-child(3) .forward-head{
+    background: url("../img/bg4_head.png") no-repeat scroll 0 0;
+}
+#fullpage section:nth-child(3) .s-left h3{
+    background:url("../img/quanmian.png") no-repeat scroll 0 0;
+}
+#fullpage section:nth-child(3) .s-right>img{
+    height: 330px;
+    width: 444px;
+}
+
+/*第四屏*/
+section:nth-child(4){
+    background: url("../img/bg4.jpg") no-repeat center;
+}
+#fullpage section:nth-child(4) .s-left h3{
+    background:url("../img/zhuanye.png") no-repeat scroll 0 0;
+}
+#fullpage section:nth-child(4) .forward-head{
+    text-align: center; line-height:200px; font-size: 12px;font-family: "Microsoft Yahei";color:#fff;
+}
+#fullpage section:nth-child(4) .forward-head a:hover{
+    text-decoration: underline;
+}
+#fullpage section:nth-child(4) .s-right>img{
+    height: 361px;
+}
+
+
+
+/*小屏
+*/
+@media screen and (max-width: 1000px) {
+    .max{
+        display: none;
+    }
+    .min{
+        display: block;
+    }
+    .login{
+        top:0;left:0;right:0;bottom:0;margin:auto;z-index:3;
+    }
+    .s-left>div{
+        width:500px;
+        height:130px;position: absolute;left:0;top:0;right:0;bottom:0;margin:auto;
+    }
 }
