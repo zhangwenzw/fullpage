@@ -329,10 +329,10 @@ section:nth-child(2){
     height:130px;position: absolute;left:0;top:100px;
 }
 .sleft-con,.sright-con{
-    opacity: 0;transform:translate(-50px,0);transition: transform 1s ease,opacity 1s ease;
-}.sright-con{
-     transform:translate(50px,0);
- }
+    transition: transform 2s ease, opacity 2s ease;
+    /*opacity: 1;*/
+    /*transform: translateX(0);*/
+}
 #fullpage .s-left h3{
     display: block;
     float: left;
