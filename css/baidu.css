@@ -320,6 +320,21 @@ section:nth-child(1){
     margin: 2px 4px 0 0;
 }
 
+/*向下按钮*/
+.btn-arrow{
+    width:30px;height:26px;background:url("../img/arrow.png");position:absolute;left:0;right:0;bottom:40px;margin:auto;animation: arrow 1.5s linear infinite;cursor: pointer;
+}
+@keyframes arrow {
+    0%{
+        opacity: 1;transform: translateY(0px);
+    }
+    50%{
+        opacity: .5;transform: translateY(10px);
+    }
+    100%{
+        opacity: 1;transform: translateY(0px);
+    }
+}
 /*第二屏*/
 section:nth-child(2){
     background: url("../img/bg2.jpg") no-repeat center;
@@ -330,8 +345,6 @@ section:nth-child(2){
 }
 .sleft-con,.sright-con{
     transition: transform 2s ease, opacity 2s ease;
-    /*opacity: 1;*/
-    /*transform: translateX(0);*/
 }
 #fullpage .s-left h3{
     display: block;
@@ -370,7 +383,7 @@ section:nth-child(2){
 }
 .s-right>img{
     position: absolute;
-    right: 100px;
+    right: 0px;
     top: 120px;
 }
 #fullpage section:nth-child(2) .s-right>img{
@@ -427,6 +440,52 @@ section:nth-child(3){
     width: 444px;
 }
 
+#fullpage .threelg{
+    position: absolute;
+    top:50px;
+    left: 130px;
+}
+#fullpage .threelg .rect{
+    position: absolute;
+    display: block;
+}
+section:nth-child(3) .threelg .rect:nth-child(1){
+    background: #33bb9a repeat 0 0;
+    left: 70px;
+    top: 0px;
+    height: 88px;
+    width: 88px;
+}
+section:nth-child(3) .threelg .rect:nth-child(2){
+    background: #29a2b8 repeat 0 0;
+    left: -18px;
+    top: 90px;
+    height: 88px;
+    width: 88px;
+}
+section:nth-child(3) .threelg .rect:nth-child(3){
+    background: #60cf6e repeat 0 0;
+    left: 158px;
+    top: 90px;
+    height: 88px;
+    width: 88px;
+}
+section:nth-child(3) .threelg .rect:nth-child(4){
+    background: url("../img/square.jpg") repeat  0 0;
+    height: 176px;
+    left: 70px;
+    top: 177px;
+    width: 176px;
+
+}
+section:nth-child(3) .threelg .rect:nth-child(5){
+    background: #33bb9a repeat 0 0;
+    left: 245px;
+    top: 175px;
+    height: 88px;
+    width: 88px;
+}
+
 /*第四屏*/
 section:nth-child(4){
     background: url("../img/bg4.jpg") no-repeat center;
@@ -444,6 +503,40 @@ section:nth-child(4){
     height: 361px;
 }
 
+section:nth-child(4) .threelg .rect:nth-child(1){
+    background: #4CDEFD repeat 0 0;
+    left: 350px;
+    top: 60px;
+    height: 50px;
+    width: 50px;
+    border-radius:50%;
+}
+section:nth-child(4) .threelg .rect:nth-child(2){
+    background: #00BC89 repeat 0 0;
+    left: 250px;
+    top: 150px;
+    height: 150px;
+    width: 150px;border-radius:50%;
+}
+section:nth-child(4) .threelg .rect:nth-child(3){
+    background: #10CA59 repeat 0 0;
+    left: 90px;
+    top: 90px;
+    height: 225px;
+    width: 225px;border-radius:50%;
+}
+
+
+/*btn*/
+.btns{
+    width:16px;height:120px;position: absolute;top:0;bottom:0;right:20px;margin:auto;display:flex;flex-wrap: wrap; align-items: center;opacity: 0.7;
+}
+.btns .btn{
+    width:14px;height:14px;border:1px solid #000;border-radius:50%;cursor: pointer;
+}
+.btns>.active{
+    background:#333;
+}
 
 
 /*小屏

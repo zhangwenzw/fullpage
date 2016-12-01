@@ -138,5 +138,45 @@ $(function(){
         $(".btn").removeClass("active").eq(num).addClass("active");
     })
 
+//鼠标滚轮事件
+    $("#fullpage").mouseWheel(function(){
+            if(!flag){
+                return;
+            }
+            num--;
+            if(num==-1){
+                num=0;
+            }
+            if(num==0){
+                $("section").not($("section").eq(num)).find(".sleft-con").css({
+                    opacity:0,transform:"translateX(0px)"
+                })
+                $("section").not($("section").eq(num)).find(".sright-con").css({
+                    opacity:0,transform:"translateX(50px)"
+                })
+            }
+            $("#fullpage").css({marginTop:-num*ch,transition:"margin 1s ease"});
+            $(".btn").removeClass("active").eq(num).addClass("active");
+            flag=false;
+    },function(){
+            if(!flag){
+                return;
+            }
+            num++;
+            if(num==$("#fullpage>section").length){
+                num=$("#fullpage>section").length-1;
+            }
+            $("#fullpage").css({marginTop:-num*ch,transition:"margin 1s ease"});
+            $(".btn").removeClass("active").eq(num).addClass("active");
+            flag=false;
+    }
+
+
+        //if(delta>0){
+        //    console.log("up");
+        //}else{
+        //    console.log("down");
+        //}
+    )
 
 })
