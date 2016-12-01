@@ -62,8 +62,10 @@ $(function(){
             num=$("#fullpage>section").length-1;
         }
         $("#fullpage").css({marginTop:-num*ch,transition:"margin 1s ease"});
+        $(".btn").removeClass("active").eq(num).addClass("active");
         flag=false;
     })
+
     touch.on("body","swipedown","#fullpage",function(){
         if(!flag){
             return;
@@ -74,34 +76,21 @@ $(function(){
         }
         if(num==0){
             $("section").not($("section").eq(num)).find(".sleft-con").css({
-                opacity:0,transform:"translateX(-50px)"
+                opacity:0,transform:"translateX(0px)"
             })
             $("section").not($("section").eq(num)).find(".sright-con").css({
                 opacity:0,transform:"translateX(50px)"
             })
         }
-        //$("section").each(function(i,obj){
-        //    if(i==0){
-        //        return;
-        //    }
-        //    if(i==num){
-        //        $(obj).find(".sleft-con").css({opacity:1,transform:"translate(0,0)",transition:"transform 1s ease"});
-        //        $(obj).find(".sright-con").css({opacity:1,transform:"translate(0,0)",transition:"transform 1s ease"});
-        //
-        //    }else{
-        //
-        //        $(obj).find(".sleft-con").css({opacity:0,transform:"translate(-50px,0)"});
-        //        $(obj).find(".sright-con").css({opacity:0,transform:"translate(50px,0)"});
-        //    }
-        //})
         $("#fullpage").css({marginTop:-num*ch,transition:"margin 1s ease"});
+        $(".btn").removeClass("active").eq(num).addClass("active");
         flag=false;
     })
 
     $("#fullpage")[0].addEventListener("webkitTransitionEnd",function(){
         flag=true;
         $("section").not($("section").eq(num)).find(".sleft-con").css({
-            opacity:0,transform:"translateX(-50px)"
+            opacity:0,transform:"translateX(0px)"
         })
         $("section").not($("section").eq(num)).find(".sright-con").css({
             opacity:0,transform:"translateX(50px)"
@@ -110,10 +99,10 @@ $(function(){
             return;
         }else{
             $("section").eq(num).find(".sleft-con").css({
-                opacity:1,transform:"translateX(0px)"
+                opacity:1,transform:"translateX(50px)"
             })
             $("section").eq(num).find(".sright-con").css({
-                opacity:1,transform:"translateX(0px)"
+                opacity:1,transform:"translateX(-50px)"
             })
         }
     },false)
@@ -133,6 +122,20 @@ $(function(){
                 transform:"translate(0,0) rotate(0deg)"
             })
         }
+    })
+
+//右边btn 点击
+    $(".btn").click(function(){
+        var index=$(this).index();
+        num=index;
+        $("#fullpage").css({marginTop:-num*ch,transition:"margin 1s ease"});
+        $(".btn").removeClass("active").eq(index).addClass("active");
+    })
+//下边btn点击
+    $(".btn-arrow").click(function(){
+        num++;
+        $("#fullpage").css({marginTop:-num*ch,transition:"margin 1s ease"});
+        $(".btn").removeClass("active").eq(num).addClass("active");
     })
 
 
